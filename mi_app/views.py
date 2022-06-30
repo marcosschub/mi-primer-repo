@@ -21,5 +21,4 @@ def mostrar_mi_template(request):
 def listar_cursos(request):
     context={}
     context["cursos"] = Curso.objects.all()
-
     return render(request, "mi_app/lista_cursos.html",context)
