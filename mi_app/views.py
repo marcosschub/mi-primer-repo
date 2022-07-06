@@ -10,13 +10,9 @@ def saludo(request):
 def saludar_a(request,nombre):
     return HttpResponse(f"Hola como estas {nombre.capitalize()}")
 
-def mostrar_mi_template(request):
-    context = {}
+def mostrar_index(request):
+    return render(request, "mi_app/index.html", {"mi_titulo":"Este es mi primer website!!!"})
 
-    if request.GET:
-        context["nombre"] = request.GET["nombre"]
-        
-    return render(request,"mi_app/index.html",context)
 
 def listar_cursos(request):
     context={}
